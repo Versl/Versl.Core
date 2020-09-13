@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<versl:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding PageTitle}"
+    BackgroundColor="{DynamicResource BackgroundColor}"
+    xmlns:fontawesome="clr-namespace:Versl.Utility" 
+    xmlns:versl="clr-namespace:Versl.Pages;assembly=Versl.Core"
+    x:Class="Versl.Pages.Admin.AdminAddContentPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding CloseCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="{DynamicResource FontAwesomeSolid}"
+                    Glyph="{x:Static fontawesome:FontAwesomeIcons.Times}"
+                    Color="{DynamicResource OnPrimaryColor}"
+                    Size="22" /> 
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{DynamicResource BackgroundColor}">
+            <TableView Intent="Settings" HasUnevenRows="True" BackgroundColor="Transparent">
+                <TableRoot>
+                    <TableSection Title="GENERAL*">
+                        <SwitchCell Text="Publish" On="{Binding Item.IsPublished}" />
+                        <ViewCell>
+                            <Grid Margin="20,10,10,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" /> 
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions> 
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Date" VerticalTextAlignment="Center" />                                
+                                <DatePicker Grid.Column="1" WidthRequest="275" Date="{Binding Date}" BackgroundColor="{DynamicResource BackgroundColor}" />
+                            </Grid>
+                        </ViewCell>
+                        <EntryCell Label="Title" Text="{Binding Item.Title}" />
+                        <EntryCell Label="Short Title" Text="{Binding Item.ShortTitle}" />
+                        <ViewCell>
+                            <Grid Margin="20,10,10,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Text="Description" />
+                                <Editor Grid.Row="1" Text="{Binding Item.Description}" HeightRequest="120" BackgroundColor="{DynamicResource BackgroundColor}" />
+                            </Grid>
+                        </ViewCell>
+                        <ViewCell>
+                            <Grid Margin="20,10,10,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Text="Short Description" />
+                                <Editor Grid.Row="1" Text="{Binding Item.ShortDescription}" HeightRequest="120" BackgroundColor="{DynamicResource BackgroundColor}" />
+                            </Grid>
+                        </ViewCell>
+                        <ViewCell>
+                            <Grid Margin="20,10,10,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" /> 
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions> 
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Folder" VerticalTextAlignment="Center" />
+                                <Picker Grid.Column="1" WidthRequest="275" ItemsSource="{Binding Categories}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedCategory}" BackgroundColor="{DynamicResource BackgroundColor}" />
+                            </Grid>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="IMAGE*">
+                        <ViewCell>
+                            <ImageButton Margin="20" HeightRequest="320" Source="{Binding ImageSource}" Command="{Binding SelectImageCommand}" Aspect="AspectFill" />
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="CALL TO ACTION">                        
+                        <EntryCell Label="URL" Text="{Binding Item.CTA.Url}" />
+                        <ViewCell>
+                            <Grid Margin="20,10,10,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Type" VerticalTextAlignment="Center" />
+                                <Picker Grid.Column="1" WidthRequest="275" ItemsSource="{Binding CTATypes}" SelectedItem="{Binding SelectedCTAType, Mode=TwoWay}" BackgroundColor="{DynamicResource BackgroundColor}" />
+                            </Grid>
+                        </ViewCell>
+                        <SwitchCell Text="Protect" On="{Binding Item.IsProtected}" />
+                        <SwitchCell Text="Subscription" On="{Binding Item.IsSubscription}" />
+                    </TableSection>             
+                </TableRoot>
+            </TableView>
+                <StackLayout Margin="5,5,5,15">
+                    <Button Text="SAVE" Command="{Binding SaveCommand}" TextColor="{DynamicResource OnBackgroundColor}"></Button>
+                </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</versl:ContentPageBase>

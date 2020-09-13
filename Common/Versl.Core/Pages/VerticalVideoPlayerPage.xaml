@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<versl:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:versl="clr-namespace:Versl.Pages;assembly=Versl.Core"
+    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:utility="clr-namespace:Versl.Utility"
+    BackgroundColor="{DynamicResource PrimaryColor}"
+    x:Class="Versl.Pages.VerticalVideoPlayerPage">
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <mm:VideoView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VideoAspect="AspectFit" ShowControls="True" InputTransparent="False" />
+            <BoxView AbsoluteLayout.LayoutBounds="0.5,0.65,1,0.5" AbsoluteLayout.LayoutFlags="All" Color="Transparent" InputTransparent="False">
+                <BoxView.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Down" Command="{Binding CloseCommand}"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+        </AbsoluteLayout>  
+    </ContentPage.Content>
+</versl:ContentPageBase>
+ 

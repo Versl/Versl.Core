@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageVersion>2.0</PackageVersion>
+    <Authors>Daniel Markland / Versl, LLC</Authors>
+    <Description>Provides Firebase services for Versl Core Framework.</Description>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>Versl.Firebase</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FirebaseDatabase.net" Version="4.0.4" />
+    <PackageReference Include="FirebaseAuthentication.net" Version="3.4.0" />
+    <PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.4.2" />
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Data\DTO\" />
+    <Folder Include="Data\Services\" />
+    <Folder Include="Auth\" />
+    <Folder Include="Storage\" />
+    <Folder Include="Push\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Versl.Core\Versl.Core.csproj" />
+  </ItemGroup>
+</Project>

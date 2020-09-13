@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<versl:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding PageTitle}"
+    BackgroundColor="{DynamicResource BackgroundColor}"
+    xmlns:fontawesome="clr-namespace:Versl.Utility" 
+    xmlns:versl="clr-namespace:Versl.Pages;assembly=Versl.Core"
+    x:Class="Versl.Pages.Admin.AdminContentListPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding CloseCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="{DynamicResource FontAwesomeSolid}"
+                    Glyph="{x:Static fontawesome:FontAwesomeIcons.Times}"
+                    Size="22" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{DynamicResource BackgroundColor}" >
+            <ListView
+            Margin="0"
+            IsPullToRefreshEnabled="True"
+            ItemsSource="{Binding ListItems}"
+            IsRefreshing="{Binding IsRefreshing}"
+            RefreshCommand="{Binding RefreshCommand}"
+            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"                
+            BackgroundColor="Transparent"
+            SeparatorVisibility="None"                
+            HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>            
+                            <Grid Padding="8, 8, 8, 35">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>                                    
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>                
+                                <Image
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="1"
+                                    Grid.RowSpan="2"
+                                    Source="{Binding Image}" 
+                                    HorizontalOptions="FillAndExpand" 
+                                    VerticalOptions="FillAndExpand" 
+                                    HeightRequest="50" 
+                                    Aspect="AspectFill"></Image>
+
+                                <Label Text="{Binding Title}" 
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Margin="5,5"
+                                    TextColor="{DynamicResource OnBackgroundColor}" 
+                                    FontAttributes="Bold" 
+                                    FontSize="12" 
+                                    HorizontalTextAlignment="Start"
+                                    VerticalTextAlignment="Center" />
+                                <Label Text="{Binding ShortDescription}" 
+                                    Grid.Row="1"                       
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="1"
+                                    Margin="5,5"
+                                    TextColor="{DynamicResource OnBackgroundColor}"
+                                    FontAttributes="None" 
+                                    FontSize="10" 
+                                    HorizontalTextAlignment="Start"
+                                    VerticalTextAlignment="Center" />
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+            <Button Text="ADD" Margin="5,5,5,15" Command="{Binding AddCommand}" TextColor="{DynamicResource OnBackgroundColor}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</versl:ContentPageBase>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<versl:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
+    Title="{Binding PageTitle}"
+    BackgroundColor="{DynamicResource BackgroundColor}"
+    xmlns:versl="clr-namespace:Versl.Pages;assembly=Versl.Core"
+    xmlns:templates="clr-namespace:Versl.Pages.Templates;assembly=Versl.Core"
+    xmlns:utility="clr-namespace:Versl.Utility"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:controls="clr-namespace:Versl.Controls;assembly=Versl.Core"
+    x:Class="Versl.Pages.ContentListPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding ShowCategoriesCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="{DynamicResource FontAwesomeSolid}"
+                    Color="{DynamicResource OnPrimaryColor}"
+                    Glyph="{x:Static utility:FontAwesomeIcons.Th}"
+                    Size="20" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{DynamicResource BackgroundColor}">
+            <ListView
+                Margin="0"
+                IsPullToRefreshEnabled="True"
+                ItemsSource="{Binding ListItems}"
+                IsRefreshing="{Binding IsRefreshing}"
+                RefreshCommand="{Binding RefreshCommand}"
+                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"                
+                BackgroundColor="Transparent"
+                SeparatorVisibility="None"                
+                HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <controls:SquareCachedImage                                    
+                                        VerticalOptions="FillAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+			                            DownsampleToViewSize="true"
+			                            Source = "{Binding Image}"
+                                        Aspect="AspectFill"
+                                        LoadingPlaceholder="loading.gif"
+                                        ErrorPlaceholder="brandlogo.png">
+		                            </controls:SquareCachedImage>
+                                    <Label Text="{Binding ShortTitle}"
+                                        Margin="10,10,10,0"
+                                        TextColor="{DynamicResource OnBackgroundColor}" 
+                                        FontAttributes="Bold" 
+                                        FontSize="20" 
+                                        HorizontalTextAlignment="Start"
+                                        VerticalTextAlignment="Center" />
+                                    <Label Text="{Binding ShortDescription}" 
+                                        Margin="10,0,10,50"
+                                        TextColor="{DynamicResource OnBackgroundColor}" 
+                                        FontAttributes="None" 
+                                        FontSize="14" 
+                                        HorizontalTextAlignment="Start"
+                                        VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <templates:MediaPlayerTemplate IsVisible="{Binding IsMediaLoaded}" />
+        </StackLayout>
+    </ContentPage.Content>
+</versl:ContentPageBase>

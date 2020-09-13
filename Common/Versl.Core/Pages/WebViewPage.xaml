@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<versl:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Versl.Pages.WebViewPage"
+    xmlns:versl="clr-namespace:Versl.Pages;assembly=Versl.Core"
+    xmlns:templates="clr-namespace:Versl.Pages.Templates;assembly=Versl.Core"
+    xmlns:utility="clr-namespace:Versl.Utility"
+    Title="{Binding PageTitle}"
+    BackgroundColor="{DynamicResource BackgroundColor}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding RefreshCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="{DynamicResource FontAwesomeSolid}"
+                    Color="{DynamicResource OnPrimaryColor}"
+                    Glyph="{x:Static utility:FontAwesomeIcons.Redo}"
+                    Size="22" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content> 
+        <StackLayout
+            BackgroundColor="{DynamicResource PrimaryColor}"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">                                    
+            <WebView Source="{Binding Source}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />            
+            <templates:MediaPlayerTemplate IsVisible="{Binding IsMediaLoaded}" />
+        </StackLayout>
+    </ContentPage.Content>    
+</versl:ContentPageBase>

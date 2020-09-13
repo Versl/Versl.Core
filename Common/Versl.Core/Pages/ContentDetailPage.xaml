@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<versl:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:versl="clr-namespace:Versl.Pages;assembly=Versl.Core"
+    xmlns:templates="clr-namespace:Versl.Pages.Templates;assembly=Versl.Core"
+    xmlns:utility="clr-namespace:Versl.Utility"
+    xmlns:converters="clr-namespace:Versl.Converters"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    Title="{Binding PageTitle}"    
+    BackgroundColor="{DynamicResource BackgroundColor}"
+    x:Class="Versl.Pages.ContentDetailPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding ShareCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="{DynamicResource FontAwesomeSolid}"
+                    Color="{DynamicResource OnPrimaryColor}"
+                    Glyph="{x:Static utility:FontAwesomeIcons.ShareSquare}"
+                    Size="20" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.IconImageSource>
+        <FontImageSource
+            FontFamily="{DynamicResource FontAwesomeSolid}"
+            Glyph="{x:Static utility:FontAwesomeIcons.Times}"
+            Size="16" />
+    </ContentPage.IconImageSource>
+    <ContentPage.Content>    
+        <StackLayout Margin="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"  BackgroundColor="{DynamicResource BackgroundColor}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout Spacing="0" BackgroundColor="{DynamicResource BackgroundColor}" VerticalOptions="FillAndExpand" IsVisible="{Binding Model, Converter={converters:InverseNullConverter}}">
+                        <ffimageloading:CachedImage                        
+                            VerticalOptions="Center"
+                            HorizontalOptions="FillAndExpand"
+			                HeightRequest="{Binding ScreenWidth}"
+			                DownsampleToViewSize="true"
+			                Source = "{Binding Model.Image}"
+                            LoadingPlaceholder="loading.gif"
+                            ErrorPlaceholder="brandlogo.png">
+		                </ffimageloading:CachedImage>                    
+                        <StackLayout 
+                            Padding="0"
+                            Spacing="0"                                 
+                            VerticalOptions="FillAndExpand">
+                            <StackLayout 
+                                Padding="20" 
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="End">                        
+                                <!-- HEADERS -->                                                  
+                                <Label
+                                    Text="{Binding Model.Title}"
+                                    LineBreakMode="WordWrap"
+                                    VerticalOptions="FillAndExpand"
+                                    TextColor="{DynamicResource OnBackgroundColor}"
+                                    FontSize="28"
+                                    FontAttributes="None"
+                                    VerticalTextAlignment="End"/>
+                                <Label
+                                    Text="{Binding Model.ShortDescription}"
+                                    FontSize="14"
+                                    FontAttributes="Italic"
+                                    TextColor="{DynamicResource OnBackgroundColor}"
+                                    VerticalOptions="StartAndExpand" />                                
+                            </StackLayout>
+                            <StackLayout 
+                                Orientation="Horizontal" 
+                                Spacing="0"
+                                VerticalOptions="FillAndExpand"
+                                Margin="0,0,0,30">                        
+                                <StackLayout 
+                                    Padding="20" 
+                                    HorizontalOptions="FillAndExpand" 
+                                    VerticalOptions="FillAndExpand">
+                                    <!-- MAIN PARAGRAPH --> 
+                                    <Label
+                                        Text="{ Binding Model.Description }"
+                                        VerticalOptions="StartAndExpand"
+                                        FontSize="18"
+                                        TextColor="{DynamicResource OnBackgroundColor}" />
+                                </StackLayout>
+                            </StackLayout>                 
+                        </StackLayout> 
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout AbsoluteLayout.LayoutBounds="0.7,0.8,0.9,0.9" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" HorizontalOptions="End" VerticalOptions="End">
+                    <Button Command="{Binding PrimaryActionCommand}" FontFamily="{DynamicResource FontAwesomeSolid}" HorizontalOptions="End" VerticalOptions="End" CornerRadius="25" WidthRequest="50" HeightRequest="50" Text="{Binding Model.CTA.Type, Converter={converters:CTATypeTitleConverter}}" IsVisible="{Binding Model.CTA.Url, Converter={converters:InverseNullConverter}}" TextColor="{DynamicResource OnSecondaryColor}" BackgroundColor="{DynamicResource SecondaryColor}" FontSize="28" />
+                </StackLayout>
+                </AbsoluteLayout>
+            <templates:MediaPlayerTemplate IsVisible="{Binding IsMediaLoaded}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</versl:ContentPageBase>
