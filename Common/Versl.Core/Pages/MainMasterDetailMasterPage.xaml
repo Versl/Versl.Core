@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<versl:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:versl="clr-namespace:Versl.Pages;assembly=Versl.Core"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    BackgroundColor="{DynamicResource BackgroundColor}"
+    x:Class="Versl.Pages.MainMasterDetailMasterPage">
+	<ContentPage.Content>
+        <Grid
+            BackgroundColor="{DynamicResource SurfaceColor}"
+            VerticalOptions="FillAndExpand" 
+            Padding="0,20,0,10"            
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="175" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="120" />
+            </Grid.RowDefinitions>
+                <StackLayout VerticalOptions="End" Grid.Row="0" BackgroundColor="Transparent">
+                    <ffimageloading:CachedImage                        
+                        VerticalOptions="End"
+                        HorizontalOptions="FillAndExpand"
+                        Aspect="AspectFill"
+                        HeightRequest="150" Margin="0,15,0,0" 
+			            DownsampleToViewSize="true"
+			            Source = "{Binding Layout.Menu.Image}"
+                        LoadingPlaceholder="loading.gif"
+                        ErrorPlaceholder="brandlogo.png">
+		            </ffimageloading:CachedImage>  
+                </StackLayout>
+                <Label Grid.Row="1" Margin="25,20,10,10" Text="{Binding Layout.Menu.Title}" TextColor="{DynamicResource OnSurfaceColor}" FontAttributes="Bold" FontSize="26" />
+                <ListView
+                    BackgroundColor="Transparent"
+                    Grid.Row="2"
+                    SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                    ItemsSource="{Binding MenuLinks}"
+                    IsGroupingEnabled="false"
+                    SeparatorVisibility="None"
+                    VerticalOptions="FillAndExpand"
+                    Margin="10,10,10,10"
+                    RowHeight="50"
+                    HasUnevenRows="False">               
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="8,8,8,15">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="65" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Grid.Column="0"
+                                        Text="{Binding Icon.Glyph}"
+                                        TextColor="{DynamicResource OnSurfaceColor}"
+                                        Margin="15,0,15,5"
+                                        FontFamily="{Binding Icon.Family}"
+                                        VerticalTextAlignment="Center"
+                                        FontSize="22"/>
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="{Binding Title}"
+                                        VerticalTextAlignment="Center"
+                                        TextColor="{DynamicResource OnSurfaceColor}"
+                                        FontSize="22"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout VerticalOptions="End" Grid.Row="3" Padding="10" BackgroundColor="Transparent">
+                    <Image VerticalOptions="End" Source="versllogo.png" HeightRequest="50" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer 
+                              Command="{Binding VendorInfoCommand}" />
+                        </Image.GestureRecognizers>                    
+                    </Image>
+                    <Label
+                        Text="Powered By Versl"
+                        HorizontalTextAlignment="Center"                        
+                        FontSize="16"
+                        TextColor="{DynamicResource OnSurfaceColor}" />                                            
+                    <Label 
+                        Text="{Binding AppInformation}"
+                        HorizontalTextAlignment="Center"
+                        Margin="0,0,0,10"
+                        FontSize="12"
+                        TextColor="{DynamicResource OnSurfaceColor}" />                    
+                </StackLayout>
+        </Grid>                 
+	</ContentPage.Content>
+</versl:ContentPageBase>

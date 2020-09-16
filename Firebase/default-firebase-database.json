@@ -1,0 +1,300 @@
+{
+  "configuration" : {
+    "dropbox" : {
+      "apiKey" : "kxOdrNwb-fQwAAAAAAAAj4hrf0iKnmVm6cYCMYMbhTlrXI8BevUdg0PYaN0RZR52m",
+      "authToken" : "DGdDPgBGAkU0AAAAAAADlCc5l3GFiAza_8eZYlj7EVRt53GnQNefzIA0mcxdhympU"
+    },
+    "layout" : {
+      "colors" : {
+        "darkBackgroundColor" : "#222c44",
+        "darkErrorColor" : "#EEEEEE",
+        "darkOnBackgroundColor" : "#EEEEEE",
+        "darkOnErrorColor" : "#EEEEEE",
+        "darkOnPrimaryColor" : "#68CAB7",
+        "darkOnPrimaryVariantColor" : "#EEEEEE",
+        "darkOnSecondaryColor" : "#EEEEEE",
+        "darkOnSecondaryVariantColor" : "#EEEEEE",
+        "darkOnSurfaceColor" : "#EEEEEE",
+        "darkPrimaryColor" : "#222c44",
+        "darkPrimaryVariantColor" : "#EEEEEE",
+        "darkSecondaryColor" : "#8008B1",
+        "darkSecondaryVariantColor" : "#1a2237",
+        "darkSurfaceColor" : "#222c44",
+        "lightBackgroundColor" : "#EEEEEE",
+        "lightErrorColor" : "#EEEEEE",
+        "lightOnBackgroundColor" : "#333333",
+        "lightOnErrorColor" : "#000000",
+        "lightOnPrimaryColor" : "#8008B1",
+        "lightOnPrimaryVariantColor" : "#000000",
+        "lightOnSecondaryColor" : "#EEEEEE",
+        "lightOnSecondaryVariantColor" : "#000000",
+        "lightOnSurfaceColor" : "#8008B1",
+        "lightPrimaryColor" : "#EEEEEE",
+        "lightPrimaryVariantColor" : "#888888",
+        "lightSecondaryColor" : "#68CAB7",
+        "lightSecondaryVariantColor" : "#F6F6F6",
+        "lightSurfaceColor" : "#EEEEEE"
+      },
+      "menu" : {
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/menu%2FVersl_Symbol_BlackBG.jpg?alt=media&token=ffa90fbf-d4fb-42d2-b79a-318e3c438f72",
+        "links" : [ {
+          "icon" : {
+            "family" : "Solid",
+            "glyph" : ""
+          },
+          "title" : "Website",
+          "type" : 0,
+          "url" : "https://myversl.com"
+        }, {
+          "icon" : {
+            "family" : "Brands",
+            "glyph" : ""
+          },
+          "title" : "Instagram",
+          "type" : 0,
+          "url" : "https://instagram.com/myversl"
+        }, {
+          "icon" : {
+            "family" : "Brands",
+            "glyph" : ""
+          },
+          "title" : "Facebook",
+          "type" : 0,
+          "url" : "https://facebook.com/myversl"
+        }, {
+          "icon" : {
+            "family" : "Solid",
+            "glyph" : ""
+          },
+          "title" : "Email",
+          "type" : 2,
+          "url" : "info@myversl.com"
+        } ],
+        "title" : "WELCOME TO VERSL"
+      },
+      "tabs" : [ {
+        "icon" : {
+          "family" : "Solid",
+          "glyph" : ""
+        },
+        "title" : "Features",
+        "type" : "IContentListViewModel"
+      }, {
+        "data" : "https://myversl.com",
+        "icon" : {
+          "family" : "Solid",
+          "glyph" : ""
+        },
+        "title" : "Web",
+        "type" : "IWebViewViewModel"
+      } ],
+      "title" : "Versl App"
+    },
+    "youtube" : {
+      "apiKey" : "AIzdaSyAuEwfjGvkIZHGfblxw3UhOsm-9Muc4hAU"
+    }
+  },
+  "entities" : {
+    "categories" : {
+      "-LrUunMv2UU2d8JGCmgo" : {
+        "created" : "0001-01-01T00:00:00",
+        "id" : "-LrUunMv2UU2d8JGCmgo",
+        "name" : "Features",
+        "updated" : "2019-10-22T00:47:14.9771553+00:00"
+      },
+      "-MEnqCEff31FQuiDXTMt" : {
+        "name" : "Tutorials"
+      }
+    },
+    "content" : {
+      "-LrebDWC0S8wikscjyeL" : {
+        "categoryId" : "-MEnqCEff31FQuiDXTMt",
+        "cta" : {
+          "title" : "Watch",
+          "type" : 4,
+          "url" : "https://stream.mux.com/nbGAIn54GLf6oyfvzDo1c1vWBSQKL7nQ5bzEhfuePDw.m3u8"
+        },
+        "description" : "Send a customized message to your fan base instantly. Targeted alerts promoting new releases, events, and much more can all be delivered with ease.",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/8f12219c-6883-d69e-20f5-0589751b7035.png?alt=media&token=cec0f4ac-2304-4ba6-a8f3-8a44fe22b6e6",
+        "isProtected" : false,
+        "isPublished" : true,
+        "isSubscription" : false,
+        "shortDescription" : "Send a customized message to your fan base instantly. Targeted alerts promoting new releases, events, and much more can all be delivered with ease.",
+        "shortTitle" : "Push Notifications",
+        "title" : "Push Notifications"
+      },
+      "-LrkyZ5ZDguxZ0rwDxYf" : {
+        "categoryId" : "-LrUunMv2UU2d8JGCmgo",
+        "cta" : {
+          "title" : "Listen",
+          "type" : 2,
+          "url" : "https://stream.mux.com/02dfoI7PpoJvrPvvu25QfkEoUSRA023LJ7Qw49l02Fu5UI.m3u8"
+        },
+        "description" : "We make it easy to sell merchandise within your app. Your fans will love having easy access to your latest gear. We integrate with Shopify, Stripe and more!",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/5d5e3a19-7bc7-e36b-d930-019357eb5ec1.png?alt=media&token=a66ce862-1efb-4a51-8269-a60dc152e3b1",
+        "isProtected" : false,
+        "isPublished" : true,
+        "isSubscription" : false,
+        "shortDescription" : "We make it easy to sell merchandise within your app. Your fans will love having easy access to your latest gear. We integrate with Shopify, Stripe and more!",
+        "shortTitle" : "Sell Merch",
+        "title" : "Sell Merch With Shopify"
+      },
+      "-Lrkzb79ExeNYMjSnjAi" : {
+        "categoryId" : "-LrUunMv2UU2d8JGCmgo",
+        "cta" : {
+          "title" : "Web",
+          "type" : 0,
+          "url" : "Https://myversl.com"
+        },
+        "description" : "Track your mobile app downloads by platform, see exactly what information your customers are viewing the most and where they’re viewing it from. Our platform integrates directly with Google Analytics!",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/cd56744b-6e59-858d-a526-e0a5fd867d37.png?alt=media&token=b1abe922-8e61-470a-83ca-3a964ddbdf74",
+        "isProtected" : false,
+        "isPublished" : true,
+        "isSubscription" : false,
+        "shortDescription" : "Track your mobile app downloads by platform, see exactly what information your customers are viewing the most and where they’re viewing it from. Our platform integrates directly with Google Analytics!",
+        "shortTitle" : "Analytics",
+        "title" : "Analytics"
+      },
+      "-Lrl-WcLn1LfNJzZ8K2H" : {
+        "description" : "Embed your Spotify playlists right into your app! Streams and plays all get registered to your Spotify account. We've made it easy for your fans to listen to your music and playlists in your own branded app.",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/db80c0ad-9527-8a63-db5d-e949840d5650.png?alt=media&token=c43816c1-0a15-4634-a7db-53bffaa5c3a9",
+        "isProtected" : false,
+        "isPublished" : true,
+        "isSubscription" : false,
+        "shortDescription" : "Embed your Spotify playlists right into your app! Streams and plays all get registered to your Spotify account.",
+        "shortTitle" : "Spotify Playlists",
+        "title" : "Spotify Playlists"
+      },
+      "-Lrl0JL9GPRD7nnHNhTF" : {
+        "description" : "Our WordPress Plugin makes it easy to send your post directly to your Versl app. This allows you to manage all of your content in WordPress. Coupled with our easy content subscription solution, you'l be up and running in no time.",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/12977805-4662-5449-2142-bedfee39e142.png?alt=media&token=fe225174-f6ea-4773-bd71-dfd5391cb48a",
+        "isProtected" : false,
+        "isPublished" : true,
+        "isSubscription" : false,
+        "shortDescription" : "Our WordPress Plugin makes it easy to send your post directly to your Versl app. This allows you to manage all of your content in WordPress.",
+        "shortTitle" : "WordPress Integration",
+        "title" : "WordPress Integration"
+      },
+      "-Lrl1Z1FUnRmYPdUWB8W" : {
+        "description" : "Control all of your content and manage your app all from our admin panel. You can make changes to your layout and settings and update your app in real time. We make it easy to send targeted push notifications linked to your content.",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/a6ce3167-665a-26ef-10ef-dfc1cf1e67a4.png?alt=media&token=a71e0769-b086-4548-b372-9f401e8b56c3",
+        "isProtected" : false,
+        "isPublished" : true,
+        "isSubscription" : false,
+        "shortDescription" : "Control all of your content and manage your app all from our admin panel. You can make changes to your layout and settings and update your app in real time.",
+        "shortTitle" : "Control Your Content",
+        "title" : "Control Your Content"
+      },
+      "-Lrl2HAreBYuxzXtuM68" : {
+        "description" : "We make it easy to subscriptions to your exclusive content. Our WordPress plugin extends your website to accept payment and integrates with our mobile platform to deliver your video content in your app.\n\n<iframe (onload)=\"dismissProgress()\" width=\"100%\" height=\"100%\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/629246505&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true\" frameborder=\"0\" allowfullscreen></iframe>",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/3ee0d3f8-cf1e-fbcc-6212-b89298e09e92.png?alt=media&token=cd5126b6-17a9-4c96-9c1f-d1ee6e45340f",
+        "isProtected" : false,
+        "isPublished" : true,
+        "isSubscription" : false,
+        "shortDescription" : "We make it easy to subscriptions to your exclusive content. Our WordPress plugin extends your website to accept payment and integrates with our mobile platform to deliver your video content in your app.",
+        "shortTitle" : "Content Subscriptions",
+        "title" : "Content Subscriptions"
+      },
+      "-Lrl3V-RvVJzvtL5Y5A_" : {
+        "categoryId" : "-LrUunMv2UU2d8JGCmgo",
+        "cta" : {
+          "type" : 0
+        },
+        "description" : "Build community and drive engagement by using your mobile app to promote performances, meet & greets, and much more!",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/165568bb-8dae-0207-f200-6ce7815f8c94.png?alt=media&token=fc9d333b-8462-4643-95a0-de60f058a0db",
+        "isProtected" : false,
+        "isPublished" : true,
+        "isSubscription" : false,
+        "shortDescription" : "Build community and drive engagement by using your mobile app to promote performances, meet & greets, and much more!",
+        "shortTitle" : "Events",
+        "title" : "Events"
+      },
+      "-MFbMAOOlJn_fz6pZtiY" : {
+        "categoryId" : "-LrUunMv2UU2d8JGCmgo",
+        "cta" : {
+          "title" : "Watch",
+          "type" : 4,
+          "url" : "https://stream.mux.com/9ufaxEhCsBFF4p9m1FPGj971QPxdR24wRiioLqZtrWI.m3u8"
+        },
+        "date" : "2020-08-22T00:00:00",
+        "description" : "Party with DJ Kayotik every Saturday night. Subscription required.",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/posts%2F-MFbMAOOlJn_fz6pZtiY?alt=media&token=0583a56c-b9ba-42e7-a368-ee333b04aa1e",
+        "isProtected" : false,
+        "isPublished" : false,
+        "isSubscription" : false,
+        "shortDescription" : "Every Saturday night your only destination is Club Cabin Fever! Brought to you by Branson Cognac",
+        "shortTitle" : "Club Cabin Fever",
+        "title" : "Club Cabin Fever"
+      },
+      "-MFbXwkBEw9TbK_RuPE9" : {
+        "categoryId" : "-LrUunMv2UU2d8JGCmgo",
+        "cta" : {
+          "type" : 3,
+          "url" : "https://stream.mux.com/owOw2spml9v4hZC8PpWvl358y32vw01dsV5qg9X00Nq02k.m3u8"
+        },
+        "date" : "2020-08-23T00:00:00",
+        "description" : "Quarantine & Chill",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/posts%2F-MFbXwkBEw9TbK_RuPE9?alt=media&token=dfba74c9-4ad8-48b4-86cd-ac9052583894",
+        "isProtected" : false,
+        "isPublished" : false,
+        "isSubscription" : false,
+        "shortDescription" : "Quarantine & Chill with DJ Kayotik. A fresh mix featuring your favorite vibes",
+        "shortTitle" : "Quarantine & Chill",
+        "title" : "Quarantine & Chill"
+      },
+      "-MFba_18Z_l3zPnAV7It" : {
+        "categoryId" : "-LrUunMv2UU2d8JGCmgo",
+        "cta" : {
+          "type" : 5,
+          "url" : "https://stream.mux.com/nHgYIihIhs1fGtKpNB4R4FVv00LtK9BTbbbQM5kCNAXA.m3u8"
+        },
+        "date" : "2020-08-24T00:00:00",
+        "description" : "Compton, California, U.S. Keenon Dequan Ray Jackson (born March 9, 1990), better known by his stage name YG, is an American rapper and actor from Paramount, California. In 2009, he released his debut single, \"Toot It and Boot It\" featuring Ty Dolla Sign, which peaked at number 67 on the Billboard Hot 100.\"",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/posts%2F-MFba_18Z_l3zPnAV7It?alt=media&token=c7619dd0-20d8-42d6-8e14-734b73225526",
+        "isProtected" : false,
+        "isPublished" : false,
+        "isSubscription" : true,
+        "shortDescription" : "Kayotik spends 97 seconds with YG 400",
+        "shortTitle" : "97 Seconds With YG",
+        "title" : "97 Seconds With YG"
+      }
+    },
+    "subscription-plans" : {
+      "-M1vGVGaxl5ByhCTcfii" : {
+        "created" : "2020-03-08T17:51:32.935467+00:00",
+        "id" : "-M1vGVGaxl5ByhCTcfii",
+        "name" : "Versl Pro",
+        "planId" : "versl-pro",
+        "platform" : 0,
+        "updated" : "2020-03-10T17:08:05.5174245+00:00"
+      },
+      "-M1vGeQ4irDb126Qf8yX" : {
+        "created" : "2020-03-08T17:52:14.5332341+00:00",
+        "id" : "-M1vGeQ4irDb126Qf8yX",
+        "name" : "Platinum",
+        "planId" : "platinum",
+        "platform" : 0,
+        "updated" : "2020-03-09T01:40:52.2592475+00:00"
+      }
+    },
+    "users" : {
+      "NkOlqXvx01QGHtsHvnkxgdNQ0Yk1" : {
+        "DisplayName" : "Testing",
+        "Email" : "Test@test.com",
+        "Role" : 0
+      },
+      "RWN6qvEVswXRu0VCyf9OozFTH2C3" : {
+        "DisplayName" : "New Test",
+        "Email" : "new@test.com",
+        "PhotoUrl" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/profiles%2FRWN6qvEVswXRu0VCyf9OozFTH2C3?alt=media&token=f90d31ef-6a25-4a5a-8ab1-1ed45d1f35c3",
+        "Role" : 0
+      },
+      "bGqmsIc101dKs9FRsvuS2PvLJTd2" : {
+        "DisplayName" : "Admin",
+        "Email" : "Admin@test.com",
+        "PhotoUrl" : "https://firebasestorage.googleapis.com/v0/b/versl-mobile-dev.appspot.com/o/profiles%2FbGqmsIc101dKs9FRsvuS2PvLJTd2?alt=media&token=f1905176-3f17-4182-9213-3454e6e2ddfc",
+        "Role" : 99
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<versl:TabbedPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:versl="clr-namespace:Versl.Pages;assembly=Versl.Core"
+    Title="{Binding PageTitle}"
+    BarBackgroundColor="{DynamicResource PrimaryColor}"
+    BarTextColor="{DynamicResource OnPrimaryColor}"
+    UnselectedTabColor="{DynamicResource PrimaryVariantColor}"
+    SelectedTabColor="{DynamicResource OnPrimaryColor}"
+    BackgroundColor="{DynamicResource BackgroundColor}"
+    x:Class="Versl.Pages.MainMasterDetailDetailPage">
+</versl:TabbedPageBase>

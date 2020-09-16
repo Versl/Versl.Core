@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<versl:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding PageTitle}"
+    BackgroundColor="{DynamicResource BackgroundColor}"
+    xmlns:utility="clr-namespace:Versl.Utility" 
+    xmlns:versl="clr-namespace:Versl.Pages;assembly=Versl.Core"
+    x:Class="Versl.Pages.Admin.AdminPushNotificationsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding CloseCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="{DynamicResource FontAwesomeSolid}"
+                    Glyph="{x:Static utility:FontAwesomeIcons.Times}"
+                    Size="22" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems> 
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{DynamicResource BackgroundColor}">
+            <TableView Intent="Settings" HasUnevenRows="True" BackgroundColor="Transparent">
+                <TableRoot>
+                    <TableSection Title="DETAILS">
+                        <EntryCell Label="Title" Text="{Binding Title}" />
+                        <ViewCell>
+                            <Grid Margin="20,10,10,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="90" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Body" Grid.Row="0" Grid.Column="0" />
+                                <Editor Grid.Row="0" Grid.Column="1" HeightRequest="160" Text="{Binding Body}" BackgroundColor="{DynamicResource BackgroundColor}" />
+                            </Grid>
+                        </ViewCell>
+                    </TableSection>                
+                </TableRoot>
+            </TableView>
+            <Button Text="SEND" Margin="5,5,5,15" Command="{Binding SendCommand}" TextColor="{DynamicResource OnBackgroundColor}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</versl:ContentPageBase>

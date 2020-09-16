@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <RootNamespace>Versl</RootNamespace>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>Versl.Core</PackageId>
+    <PackageVersion>2.0</PackageVersion>
+    <Authors>Daniel Markland / Versl, LLC</Authors>
+    <Description>Provides services for Versl Core Framework.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="MvvmCross" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Forms" Version="6.4.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Plugin.MediaManager" Version="1.0.1" />
+    <PackageReference Include="Plugin.MediaManager.Forms" Version="1.0.1" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.4.2" />
+    <PackageReference Include="Plugin.FirebasePushNotification" Version="3.3.10" />
+    <PackageReference Include="Plugin.InAppBilling" Version="4.0.0-beta" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Models\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Services\" />
+    <Folder Include="Utility\" />
+    <Folder Include="Services\Data\" />
+    <Folder Include="Pages\Admin\" />
+    <Folder Include="ViewModels\Admin\" />
+    <Folder Include="Pages\Templates\" />
+    <Folder Include="Services\Storage\" />
+    <Folder Include="Services\Auth\" />
+    <Folder Include="Services\Media\" />
+    <Folder Include="Services\Analytics\" />
+    <Folder Include="Services\Push\" />
+    <Folder Include="Services\Theme\" />
+    <Folder Include="Models\Links\" />
+    <Folder Include="Models\Configuration\" />
+    <Folder Include="Models\User\" />
+    <Folder Include="Services\Data\Interfaces\" />
+    <Folder Include="ViewModels\Interfaces\" />
+    <Folder Include="ViewModels\Admin\Interfaces\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Pages\LoginPage %28copy%29.xaml.cs" />
+    <Compile Remove="Pages\RegisterPage %28copy%29.xaml.cs" />
+    <Compile Remove="Pages\ProfilePage %28copy%29.xaml.cs" />
+    <Compile Remove="Pages\Admin\AdminEditContentPage %28copy%29.xaml.cs" />
+    <Compile Remove="Pages\Admin\AdminCategoryListPage %28copy%29.xaml.cs" />
+    <Compile Remove="Pages\AudioPlayerPage %28copy%29.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\AudioPlayerPage.xaml.cs">
+      <DependentUpon>AudioPlayerPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

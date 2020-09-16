@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<versl:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:versl="clr-namespace:Versl.Pages;assembly=Versl.Core"
+    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:utility="clr-namespace:Versl.Utility"
+    xmlns:converters="clr-namespace:Versl.Converters"
+    xmlns:controls="clr-namespace:Versl.Controls"
+    BackgroundColor="{DynamicResource PrimaryColor}"
+    x:Class="Versl.Pages.AudioPlayerPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0" BackgroundColor="{DynamicResource PrimaryColor}">
+            <AbsoluteLayout HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" IsVisible="True">
+                <controls:BlurredImage Source="{Binding MediaItem.ImageUri}" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity=".7" ios:VisualElement.BlurEffect="Dark" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                <StackLayout AbsoluteLayout.LayoutBounds=".5,.5" AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Image Source="{Binding MediaItem.ImageUri}" HeightRequest="280" WidthRequest="280" Aspect="AspectFit"/>
+                    <Label Text="{Binding MediaItem.Title}" Padding="20" TextColor="{DynamicResource OnPrimaryColor}" FontSize="20" HorizontalOptions="Center"/>
+                    <Label Text="{x:Static utility:FontAwesomeIcons.PauseCircle}" TextColor="{DynamicResource OnPrimaryColor}" Margin="25" FontFamily="{DynamicResource FontAwesomeSolid}" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsMediaPlaying}" FontSize="72">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PlayPauseMediaCommand}" />
+                                </Label.GestureRecognizers>
+                    </Label> 
+                    <Label Text="{x:Static utility:FontAwesomeIcons.PlayCircle}" TextColor="{DynamicResource OnPrimaryColor}" Margin="25" FontFamily="{DynamicResource FontAwesomeSolid}" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsMediaPlaying, Converter={converters:InverseBoolConverter}}" FontSize="72">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PlayPauseMediaCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </AbsoluteLayout>
+
+            <!--<Button Text="CLOSE" FontSize="18" TextColor="{DynamicResource OnPrimaryColor}" Margin="5,5,5,25" VerticalOptions="End" Command="{Binding CloseCommand}"></Button>-->
+            <StackLayout.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Down"
+                    Command="{Binding CloseCommand}"/>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+    </ContentPage.Content>
+</versl:ContentPageBase>
+ 

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:utility="clr-namespace:Versl.Utility"
+    xmlns:converters="clr-namespace:Versl.Converters"
+    x:Class="Versl.Pages.Templates.MediaPlayerTemplate">
+    <ContentView.Content>
+        <Grid BackgroundColor="{DynamicResource SecondaryVariantColor}" RowSpacing="0" ColumnSpacing="0" Padding="0" Margin="0">
+            <Grid.RowDefinitions>                    
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions> 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>                 
+            <Label Text="{x:Static utility:FontAwesomeIcons.ChevronUp}" TextColor="{DynamicResource OnPrimaryColor}" Margin="15,0,0,5" FontFamily="{DynamicResource FontAwesomeSolid}" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" FontSize="24">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShowPlayerCommand}" />
+                </Label.GestureRecognizers>
+            </Label>   
+            <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HeightRequest="60">
+                <StackLayout.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android" Value="0,10,0,0"/>
+                    </OnPlatform>
+                </StackLayout.Margin>
+                <Label TextColor="{DynamicResource OnPrimaryColor}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontSize="14" Text="{Binding MediaItem.Title}">
+                    <Label.FontSize>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android" Value="14"/>
+                            <On Platform="iOS" Value="13"/>
+                        </OnPlatform>
+                    </Label.FontSize>
+                </Label>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShowPlayerCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <Label Text="{x:Static utility:FontAwesomeIcons.Pause}" TextColor="{DynamicResource OnPrimaryColor}" Margin="0,0,15,5" FontFamily="{DynamicResource FontAwesomeSolid}" VerticalOptions="Center" Grid.Row="0" Grid.Column="2" IsVisible="{Binding IsMediaPlaying}" FontSize="24">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PlayPauseMediaCommand}" />
+                </Label.GestureRecognizers>
+            </Label> 
+            <Label Text="{x:Static utility:FontAwesomeIcons.Play}" TextColor="{DynamicResource OnPrimaryColor}" Margin="0,0,15,5" FontFamily="{DynamicResource FontAwesomeSolid}" VerticalOptions="Center" Grid.Row="0" Grid.Column="2" IsVisible="{Binding IsMediaPlaying, Converter={converters:InverseBoolConverter}}" FontSize="24">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PlayPauseMediaCommand}" />
+                </Label.GestureRecognizers>
+            </Label>                
+        </Grid>
+    </ContentView.Content>
+</ContentView>

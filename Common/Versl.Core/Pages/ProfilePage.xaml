@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<versl:ContentPageBase
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:versl="clr-namespace:Versl.Pages;assembly=Versl.Core"
+    xmlns:utility="clr-namespace:Versl.Utility"
+    Title="Profile"
+    BackgroundColor="{DynamicResource BackgroundColor}"
+    x:Class="Versl.Pages.ProfilePage">   
+    <ContentPage.Content>
+        <StackLayout>
+           <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Margin="50,120,50,10">
+                <StackLayout
+                    Padding="40">
+                    <Frame CornerRadius="50" 
+                            HeightRequest="100" 
+                            WidthRequest="100"
+                            HorizontalOptions="Center"
+                            Padding="0"
+                            IsClippedToBounds="True">                                    
+                        <ImageButton
+                            Source="{Binding CurrentUser.PhotoUrl}"
+                            Aspect="AspectFill"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Command="{Binding SelectImageCommand}"/>
+                    </Frame>
+                </StackLayout>
+                        
+                <Label Text="{Binding CurrentUser.DisplayName}"
+                    Margin="5,5"
+                    TextColor="{DynamicResource OnBackgroundColor}" 
+                    FontAttributes="None" 
+                    FontSize="20" 
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center" />
+                <Label Text="{Binding CurrentUser.Email}" 
+                    Margin="5,5"
+                    TextColor="{DynamicResource OnBackgroundColor}" 
+                    FontAttributes="None" 
+                    FontSize="20" 
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>                    
+            <Button Text="EDIT" FontSize="18" TextColor="{DynamicResource SecondaryColor}" Margin="5,5,5,25" VerticalOptions="End" Command="{Binding EditProfileCommand}"></Button>
+            <StackLayout.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Down"
+                    Command="{Binding CloseCommand}"/>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+    </ContentPage.Content>
+</versl:ContentPageBase>
